@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_listview_back"
+    android:paddingBottom="15dp" >
+
+    <ImageView
+        android:id="@+id/iv_polling_tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/no_implement" />
+
+    <TextView
+        android:id="@+id/tv_polling_danhao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@id/iv_polling_tags"
+        android:text="巡检计划单号 : 45245452758455"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_polling_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_polling_danhao"
+        android:layout_below="@id/tv_polling_danhao"
+        android:layout_marginTop="3dp"
+        android:text="预计巡检时间 : 2015-12-15:8:00"
+        android:textColor="@color/black" />
+
+    <CheckBox
+        android:focusable="false"
+        android:id="@+id/cb_polling"
+        style="@style/CustomCheckboxTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp" />
+
+    <View
+        android:id="@+id/view_polling"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@id/cb_polling"
+        android:background="@color/polling_gray" />
+
+</RelativeLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp" >
+
+    <com.minji.cufcs.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:riv_corner_radius="8dip"
+        app:riv_mutate_background="true"
+        android:id="@+id/iv_water_hubname"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:background="@mipmap/water_hubname_image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/iv_water_hubname"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <TextView
+            android:id="@+id/tv_shuniu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="枢纽名称 : 澡港河南枢纽"
+            android:textColor="#18B2E9"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/tv_out_river"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="外河水位 : 3.54"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_in_river"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="内河水位 : 7.54"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="采集时间 : 2015-05-27 05:56"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</RelativeLayout>

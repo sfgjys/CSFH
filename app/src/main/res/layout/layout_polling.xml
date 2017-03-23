@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dropdown="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp" >
+
+        <com.minji.cufcs.widget.PullDownItem
+            android:id="@+id/pd_polling_hubname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            dropdown:downimage="@mipmap/down_arrow"
+            dropdown:maioshutext="巡视枢纽 :" >
+        </com.minji.cufcs.widget.PullDownItem>
+
+        <com.minji.cufcs.widget.PullDownItem
+            android:id="@+id/pd_polling_person"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            dropdown:downimage="@mipmap/down_arrow"
+            dropdown:maioshutext="巡视人员 :" >
+        </com.minji.cufcs.widget.PullDownItem>
+
+        <com.minji.cufcs.widget.PullDownItem
+            android:id="@+id/pd_polling_time"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            dropdown:downimage="@mipmap/down_arrow"
+            dropdown:maioshutext="巡视时间 :" >
+        </com.minji.cufcs.widget.PullDownItem>
+
+        <com.minji.cufcs.widget.PullDownItem
+            android:id="@+id/pd_polling_number"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            dropdown:downimage="@mipmap/down_arrow"
+            dropdown:maioshutext="巡视次数 :" >
+        </com.minji.cufcs.widget.PullDownItem>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_polling_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_login_button"
+                android:text="下一步"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/touming_thin_gray"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/loading_big" />
+    </FrameLayout>
+
+</FrameLayout>

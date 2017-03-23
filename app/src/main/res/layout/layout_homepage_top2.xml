@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_homepage_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ico_13" />
+
+    <TextView
+        android:id="@+id/tv_homepage_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@id/iv_homepage_green"
+        android:text="21"
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/view_middle"
+        android:layout_width="28dp"
+        android:layout_height="2dp"
+        android:layout_alignLeft="@id/tv_homepage_green"
+        android:layout_below="@id/tv_homepage_green"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_homepage_green_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_homepage_green"
+        android:layout_below="@id/view_middle"
+        android:text="正常"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

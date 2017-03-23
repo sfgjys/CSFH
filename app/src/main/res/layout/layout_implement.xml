@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" >
+
+        <TextView
+            android:id="@+id/tv_open_out_river"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="开机时外河水位 :" />
+
+        <EditText
+            android:id="@+id/et_open_out_river"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_open_out_river"
+            android:layout_toRightOf="@id/tv_open_out_river"
+            android:background="@drawable/my_edit_text"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" >
+
+        <TextView
+            android:id="@+id/tv_open_in_river"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="开机时内河水位 :" />
+
+        <EditText
+            android:id="@+id/et_open_in_river"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_open_in_river"
+            android:layout_toRightOf="@id/tv_open_in_river"
+            android:background="@drawable/my_edit_text"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp" >
+
+        <TextView
+            android:id="@+id/tv_remark"
+            style="@style/polling_entering_text"
+            android:text="备注  :" />
+
+        <EditText
+            android:id="@+id/et_remark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_remark"
+            android:background="@drawable/my_edit_text"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:maxLength="180"
+            android:maxLines="4"
+            android:minLines="4"
+            android:scrollbars="vertical"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp" >
+
+        <TextView
+            android:id="@+id/tv_add"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="添加机组明细 :" />
+
+        <ImageView
+            android:id="@+id/iv_add_unit_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_add"
+            android:src="@mipmap/polling_enter_add_picture" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bt_implement_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/selector_login_button"
+        android:text="保存信息"
+        android:textColor="@color/white" />
+
+</LinearLayout>

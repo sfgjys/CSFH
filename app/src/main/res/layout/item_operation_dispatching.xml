@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/thin_gray"
+    android:padding="6dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_background_item_operation_dispatching"
+        android:orientation="vertical"
+        android:padding="6dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tv_scheduling_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调度类型 : 大包围调度"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_enforcement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="执行部门 : 四所"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_decomposition_single_making_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="分解单制单时间 : 2016-12-28 23:59:59"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_decomposition_single_making_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="分解单制单人 : 测试人员"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</FrameLayout>

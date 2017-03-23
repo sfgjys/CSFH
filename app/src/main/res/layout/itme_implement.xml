@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:paddingBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_listview_item" >
+
+        <ImageView
+            android:id="@+id/iv_is_or_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/no_implement" />
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/iv_is_or_no"
+            android:id="@+id/tv_implement_hubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="枢纽名称: 横塘河南枢纽"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:id="@+id/tv_implement_make_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_implement_hubname"
+            android:layout_below="@id/tv_implement_hubname"
+            android:text="制单时间: 2015-7-12 12:20:30"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background_homepage" >
+
+    <RelativeLayout
+        android:id="@+id/homepage_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/shape_background_rectangle"
+        android:padding="6dp" >
+
+        <include
+            android:id="@+id/include_layout_homepage_top1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            layout="@layout/layout_homepage_top1" />
+
+        <View
+            android:id="@+id/view_top1_top3"
+            android:layout_width="240dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/include_layout_homepage_top1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:background="@color/viewcolor" />
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_top1_top3"
+            android:layout_centerHorizontal="true"
+            layout="@layout/layout_homepage_top3" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/homepage_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@id/homepage_top"
+        android:layout_alignRight="@id/homepage_top"
+        android:layout_below="@id/homepage_top"
+        android:layout_marginTop="10dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:verticalSpacing="10dp" >
+    </GridView>
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="login_buttom_height">100dp</dimen>
+    <dimen name="login_logo_height">200dp</dimen>
+    <dimen name="login_logo_width">200dp</dimen>
+    <dimen name="login_logo_marginTop">10dp</dimen>
+    <dimen name="login_editext">250dp</dimen>
+    <dimen name="homepage_padding1">4dp</dimen>
+     <dimen name="homepage_padding2">20dp</dimen>
+    <dimen name="homepage_text_image">2dp</dimen>
+
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="login_back">#D2D2D2</color>
+
+    <color name="gray">#FFFF00</color>
+
+    <color name="login_blue">#0091D0</color>
+
+    <color name="thin_blue">#C9D7F2</color>
+
+    <color name="thin_gray">#DADADA</color>
+    <color name="touming_thin_gray">#66000000</color>
+
+    <color name="viewcolor">#1F3F67</color>
+
+    <color name="setting_logout">#EE2424</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="red">#FF0000</color>
+
+    <color name="polling_gray">#989898</color>
+
+    <color name="black">#000000</color>
+    <color name="this_black">#646464</color>
+
+    <color name="tab">#1AA4D2</color>
+
+    <color name="screen">#33F4F4F4</color>
+
+    <color name="gridcolor">#000000</color>
+
+
+    <color name="bg_window">#ffe5e5e5</color>
+    <color name="bg_page">#ffebebeb</color>
+    <color name="bg_tab_pressed">#6633b5e5</color><!-- 蓝色 -->
+    <color name="bg_tab_normal">#00000000</color>
+    <!-- <color name="bg_tab_pressed2">#ff3898ff</color>  -->
+
+    <color name="tab_text_color_selected">#ff0084ff</color> <!-- 选中文字颜色 -->
+    <color name="tab_text_color_normal">#ff737373</color> <!-- 未选中文字颜色 -->
+
+    <color name="translucent_background">#80000000</color>
+
+    <color name="txt_title">#ff333333</color>
+    <color name="txt_small">#ff7a7a7a</color>
+    <color name="txt_big">#ff717171</color>
+    <color name="item_divider">#ffd7d7d7</color>
+    <color name="detail_screen_bg">#adadad</color>
+    <color name="progress">#0294f0</color>
+    <color name="menu_bg_normal">#f0f1f3</color>
+    <color name="menu_bg_press">#cecece</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="slidingtab_indicatorcolor">#0084FF</color>
+
+</resources>

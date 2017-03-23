@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/tv_drop_down"
+        style="@style/polling_entering_text"
+        android:layout_centerVertical="true"
+        android:text="巡视枢纽 :" />
+
+    <EditText
+        android:editable="false"
+        android:id="@+id/et_drop_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tv_drop_down"
+        android:layout_toRightOf="@id/tv_drop_down"
+        android:background="@drawable/my_edit_text"
+        android:inputType="none"
+        android:singleLine="true"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/iv_drop_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/et_drop_down"
+        android:layout_alignRight="@id/et_drop_down"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/down_arrow" />
+
+</RelativeLayout>

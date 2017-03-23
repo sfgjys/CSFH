@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_hompage_grideitem"
+    android:paddingBottom="@dimen/homepage_padding1"
+    android:paddingLeft="@dimen/homepage_padding2"
+    android:paddingRight="@dimen/homepage_padding2"
+    android:paddingTop="@dimen/homepage_padding1" >
+
+    <ImageView
+        android:id="@+id/iv_gridview_itme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ico_23" />
+
+    <TextView
+        android:id="@+id/tv_gridview_itme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_gridview_itme"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/homepage_text_image"
+        android:text="水情管理"
+        android:textColor="#99ECFA"
+        android:textSize="15dp" />
+
+</RelativeLayout>

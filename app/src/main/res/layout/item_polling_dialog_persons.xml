@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:background="@color/white"
+    >
+
+    <CheckBox
+        android:layout_marginLeft="20dp"
+        android:button="@drawable/selector_polling_dialog_checkbox"
+        android:id="@+id/tv_polling_dialog_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="工程科 : 分国庆"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+</LinearLayout>

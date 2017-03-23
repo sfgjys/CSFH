@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <com.minji.cufcs.widget.HomPageItem
+        android:id="@+id/homepageitem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:miaoshu="正常"
+        app:num="21"
+        app:tubiao="@mipmap/ico_13"
+        app:viewcolor="@android:color/holo_green_light" >
+    </com.minji.cufcs.widget.HomPageItem>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="6dp"
+        android:layout_toRightOf="@id/homepageitem1"
+        android:background="@color/viewcolor" />
+
+    <com.minji.cufcs.widget.HomPageItem
+        android:id="@+id/homepageitem2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/view1"
+        app:miaoshu="报警"
+        app:num="3"
+        app:tubiao="@mipmap/ico_15"
+        app:viewcolor="@android:color/holo_red_light" >
+    </com.minji.cufcs.widget.HomPageItem>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="6dp"
+        android:layout_toRightOf="@id/homepageitem2"
+        android:background="@color/viewcolor" />
+
+    <com.minji.cufcs.widget.HomPageItem
+          android:id="@+id/homepageitem3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/view2"
+        app:miaoshu="异常"
+        app:num="2"
+        app:tubiao="@mipmap/ico_17"
+        app:viewcolor="@android:color/holo_orange_light" >
+    </com.minji.cufcs.widget.HomPageItem>
+
+</RelativeLayout>

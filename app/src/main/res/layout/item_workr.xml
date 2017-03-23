@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp" >
+
+    <com.minji.cufcs.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:riv_corner_radius="8dip"
+        app:riv_mutate_background="true"
+        android:id="@+id/iv_item_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/item_unit" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/iv_item_unit"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_unit_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="枢纽名称 : 澡港河南枢纽"
+            android:textColor="#18B2E9"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_unit_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="机组编号 : 3.54"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_unit_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="采集时间 : 2015-05-27 05:56"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_unit_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/state_throw" />
+
+</RelativeLayout>

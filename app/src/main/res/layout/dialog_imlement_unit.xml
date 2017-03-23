@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dropdown="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/login_blue"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="录入机组明细"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <com.minji.cufcs.widget.PullDownItem
+        android:id="@+id/pd_imlement_unit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        dropdown:downimage="@mipmap/down_arrow"
+        dropdown:maioshutext="选择机组 :" >
+    </com.minji.cufcs.widget.PullDownItem>
+
+    <com.minji.cufcs.widget.PullDownItem
+        android:id="@+id/pd_imlement_unit_open_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        dropdown:downimage="@mipmap/down_arrow"
+        dropdown:maioshutext="开机时间 :" >
+    </com.minji.cufcs.widget.PullDownItem>
+
+    <com.minji.cufcs.widget.PullDownItem
+        android:id="@+id/pd_imlement_unit_close_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        dropdown:downimage="@mipmap/down_arrow"
+        dropdown:maioshutext="关机时间 :" >
+    </com.minji.cufcs.widget.PullDownItem>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_dialog_button"
+            android:text="取消"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/bt_make_sure"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_dialog_button"
+            android:text="确定"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</LinearLayout>

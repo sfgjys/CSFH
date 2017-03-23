@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.minji.cufcs.widget.MyRelativeLayout
+        android:id="@+id/rl_is_interrupt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/background_homepage" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@mipmap/login_buttom" />
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_logo_marginTop"
+            android:src="@mipmap/login_logo" />
+
+        <EditText
+            android:id="@+id/et_user"
+            android:layout_width="@dimen/login_editext"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@mipmap/ren"
+            android:hint="请输入帐号"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/et_passward"
+            android:layout_width="@dimen/login_editext"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:drawableLeft="@mipmap/suo"
+            android:hint="请输入密码"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textColor="@android:color/darker_gray" />
+
+        <CheckBox
+            android:id="@+id/cb"
+            style="@android:style/Widget.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/et_passward"
+            android:layout_below="@id/et_passward"
+            android:layout_marginTop="10dp"
+            android:text="自动登录"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="@dimen/login_editext"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cb"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_login_button"
+            android:text="登录系统"
+            android:textColor="@color/white" />
+    </com.minji.cufcs.widget.MyRelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_login_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/touming_thin_gray"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/loading_big" />
+    </FrameLayout>
+
+</FrameLayout>

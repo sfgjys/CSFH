@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <EditText
+        android:background="@drawable/my_edit_text"
+        android:gravity="top"
+        android:id="@+id/et_pull_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/iv_pull_down_click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/et_pull_down"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/down_arrow"
+        android:visibility="gone" />
+
+</RelativeLayout>

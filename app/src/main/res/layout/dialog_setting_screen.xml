@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/login_blue"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="流媒体设置"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp" >
+
+        <TextView
+            android:id="@+id/tv_ip_adrres"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="IP地址 :" />
+
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/et_ip_adrres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_ip_adrres"
+            android:layout_toRightOf="@id/tv_ip_adrres"
+            android:background="@drawable/my_edit_text"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp" >
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="账户 :" />
+
+        <EditText
+            android:id="@+id/et_setting_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_username"
+            android:layout_toRightOf="@id/tv_username"
+            android:background="@drawable/my_edit_text"
+            android:editable="true"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp" >
+
+        <TextView
+            android:id="@+id/tv_password"
+            style="@style/polling_entering_text"
+            android:layout_centerVertical="true"
+            android:text="密码 :" />
+
+        <EditText
+            android:id="@+id/et_setting_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_password"
+            android:layout_toRightOf="@id/tv_password"
+            android:background="@drawable/my_edit_text"
+            android:editable="true"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_setting_screen_cancel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_dialog_button"
+            android:text="取消"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/bt_make_setting_screen_sure"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_dialog_button"
+            android:text="确定"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</LinearLayout>

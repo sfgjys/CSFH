@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <TextView
+            style="@style/polling_entering_text"
+            android:text="巡视要求 :" />
+
+        <TextView
+            android:id="@+id/tv_polling_content"
+            style="@style/polling_entering_text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:text="    柜体、开关完好，仪表显示正常，电容补偿正常，指示灯显示正常，柜前后绝缘垫完好清洁"
+            android:textColor="@color/this_black"
+            android:textSize="15dp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="巡视情况 :"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroups"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_nromal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/selector_polling_radio"
+                    android:text="正常"
+                    android:textColor="@color/black" />
+
+                <RadioButton
+                    android:id="@+id/rb_no_nromal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/selector_polling_radio"
+                    android:text="不正常"
+                    android:textColor="@color/black" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" >
+
+            <TextView
+                android:id="@+id/tv_miaoshu"
+                style="@style/polling_entering_text"
+                android:text="巡视记录 :" />
+
+            <EditText
+                android:id="@+id/et_pull_down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_miaoshu"
+                android:background="@drawable/my_edit_text"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLength="180"
+                android:maxLines="4"
+                android:minLines="4"
+                android:scrollbars="vertical"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp" >
+
+            <TextView
+                android:id="@+id/tv_picture"
+                style="@style/polling_entering_text"
+                android:layout_centerVertical="true"
+                android:text="图片 :" />
+
+            <ImageView
+                android:id="@+id/iv_polling_enter_add_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_picture"
+                android:src="@mipmap/polling_enter_add_picture" />
+
+            <com.minji.cufcs.widget.HorizontalListView
+                android:id="@+id/hlv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/iv_polling_enter_add_picture"
+                android:layout_alignTop="@+id/iv_polling_enter_add_picture"
+                android:layout_toRightOf="@id/iv_polling_enter_add_picture" >
+            </com.minji.cufcs.widget.HorizontalListView>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bt_polling_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/selector_login_button"
+            android:text="保存信息"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

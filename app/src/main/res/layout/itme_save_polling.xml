@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:background="@drawable/selector_listview_item"
+    android:padding="6dp" >
+
+    <ImageView
+        android:id="@+id/iv_already_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/already_image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/iv_already_image"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_save_polling_hubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="枢纽名: 横塘河南枢纽"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/tv_save_polling_degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="2015年7月: 第一次"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</RelativeLayout>

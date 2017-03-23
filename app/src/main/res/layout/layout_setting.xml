@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:setting="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D2D2D2"
+    android:orientation="vertical" >
+
+    <com.minji.cufcs.widget.SettingItem
+        android:id="@+id/settingitem_inform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        setting:iscache="gone"
+        setting:isright="gone"
+        setting:isswitch="visible"
+        setting:setting_itm_miaoshu="通知报警"
+        setting:setting_itm_tubiao="@mipmap/setting_ico1" >
+    </com.minji.cufcs.widget.SettingItem>
+
+<!--     <com.minji.cufcs.widget.SettingItem
+        android:id="@+id/settingitem_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        setting:iscache="gone"
+        setting:isright="gone"
+        setting:isswitch="visible"
+        setting:setting_itm_miaoshu="退出系统接受通知"
+        setting:setting_itm_tubiao="@drawable/setting_ico2" >
+    </com.minji.cufcs.widget.SettingItem> -->
+
+    <com.minji.cufcs.widget.SettingItem
+        android:id="@+id/settingitem_cache"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        setting:iscache="visible"
+        setting:isright="visible"
+        setting:isswitch="gone"
+        setting:setting_itm_miaoshu="清理缓存"
+        setting:setting_itm_tubiao="@mipmap/setting_ico3" >
+    </com.minji.cufcs.widget.SettingItem>
+
+    <com.minji.cufcs.widget.SettingItem
+        android:id="@+id/settingitem_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        setting:iscache="gone"
+        setting:isright="visible"
+        setting:isswitch="gone"
+        setting:setting_itm_miaoshu="流媒体设置"
+        setting:setting_itm_tubiao="@mipmap/setting_ico4" >
+    </com.minji.cufcs.widget.SettingItem>
+
+    <com.minji.cufcs.widget.SettingItem
+        android:id="@+id/settingitem_versions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        setting:iscache="gone"
+        setting:isright="visible"
+        setting:isswitch="gone"
+        setting:setting_itm_miaoshu="版本信息"
+        setting:setting_itm_tubiao="@mipmap/setting_ico5" >
+    </com.minji.cufcs.widget.SettingItem>
+
+    <Button
+        android:id="@+id/bt_logout"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:background="@drawable/selector_setting_button"
+        android:text="注销账号"
+        android:textColor="@color/white" />
+
+</LinearLayout>

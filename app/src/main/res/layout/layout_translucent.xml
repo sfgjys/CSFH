@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/ll_translucent_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/login_blue"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="报警信息"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_translucent_alarm_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:src="@mipmap/close1" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_alarm_msg_tenslucent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:drawableLeft="@mipmap/warm"
+            android:drawablePadding="6dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="暂无报警信息"
+            android:textColor="@color/this_black"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/bt_tenslucent_alarm_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_login_button"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="一小时之内停止警报"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <!--
+    <ImageView
+        android:layout_alignRight="@id/ll_translucent_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_translucent_alarm"
+        android:src="@drawable/close1" />
+
+    <ImageView
+        android:layout_toRightOf="@id/ll_translucent_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_translucent_alarm"
+        android:src="@drawable/close2" />
+
+    <ImageView
+        android:layout_alignRight="@id/ll_translucent_alarm"
+        android:layout_alignTop="@id/ll_translucent_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close3" />
+
+    <ImageView
+        android:layout_toRightOf="@id/ll_translucent_alarm"
+        android:layout_alignTop="@id/ll_translucent_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close4" />-->
+
+</RelativeLayout>
