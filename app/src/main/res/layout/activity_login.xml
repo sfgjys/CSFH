@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <com.minji.cufcs.widget.MyRelativeLayout
         android:id="@+id/rl_is_interrupt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/background_homepage" >
+        android:background="@mipmap/background_homepage">
 
         <ImageView
             android:layout_width="match_parent"
@@ -52,15 +52,18 @@
             android:textColor="@android:color/darker_gray" />
 
         <CheckBox
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:checked="false"
+            android:drawableLeft="@drawable/selector_login_radiobutton_bg"
             android:id="@+id/cb"
-            style="@android:style/Widget.CompoundButton.RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/et_passward"
             android:layout_below="@id/et_passward"
             android:layout_marginTop="10dp"
             android:text="自动登录"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/bt_login"
@@ -79,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/touming_thin_gray"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <ProgressBar
             android:layout_width="wrap_content"
