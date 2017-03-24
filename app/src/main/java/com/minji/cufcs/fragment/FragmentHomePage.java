@@ -43,305 +43,329 @@ import com.minji.cufcs.widget.numberprogressbar.NumberProgressBar;
 
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentHomePage extends Fragment implements OnItemClickListener,
-		OnClickListener {
+        OnClickListener {
 
-	private View view;
-	private MainActivity mainActivity;
-	private int interentVersionCode = 0;
-	private int versionCode;
-	private AlertDialog alertDialog;
-	private AlertDialog downloadDialog;
-	private TextView againDownLoad;
-	private NumberProgressBar numberProgressBar;
-	private AllotDownLoadRunnable downLoadRunnable;
-	private Runnable downLoadThread;
-	protected String fileName;
+    private View view;
+    private MainActivity mainActivity;
+    private int interentVersionCode = 0;
+    private int versionCode;
+    private AlertDialog alertDialog;
+    private AlertDialog downloadDialog;
+    private TextView againDownLoad;
+    private NumberProgressBar numberProgressBar;
+    private AllotDownLoadRunnable downLoadRunnable;
+    private Runnable downLoadThread;
+    protected String fileName;
 
-	@Override
-	@Nullable
-	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    @Override
+    @Nullable
+    public View onCreateView(LayoutInflater inflater,
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-		view = inflater.inflate(R.layout.layout_homepage, null);
+        view = inflater.inflate(R.layout.layout_homepage, null);
 
-		GridView gridView = (GridView) view
-				.findViewById(R.id.homepage_gridview);
-		gridView.setSelector(android.R.color.transparent);
-		gridView.setAdapter(new HomePageAdapter());
-		gridView.setOnItemClickListener(this);
+        GridView gridView = (GridView) view
+                .findViewById(R.id.homepage_gridview);
+        gridView.setSelector(android.R.color.transparent);
+        gridView.setAdapter(new HomePageAdapter());
+        gridView.setOnItemClickListener(this);
 
-		mainActivity = (MainActivity) getActivity();
+        mainActivity = (MainActivity) getActivity();
 
-		// 自动更新功能======================================================================
-		mainActivity.setLoadIsVisible(View.VISIBLE);
-		mainActivity.setIsInterrupt(true);
-		ThreadManager.getInstance().execute(new Runnable() {
-			@Override
-			public void run() {
-				// TODO 请求版本信息
-				requestVersionCode();
+        // 自动更新功能======================================================================
+        mainActivity.setLoadIsVisible(View.VISIBLE);
+        mainActivity.setIsInterrupt(true);
+        ThreadManager.getInstance().execute(new Runnable() {
+            @Override
+            public void run() {
+                // TODO 请求版本信息
+                requestVersionCode();
 
-				versionCode = ViewsUitls.getVersionCode(mainActivity);
-				ViewsUitls.runInMainThread(new Runnable() {
-					@Override
-					public void run() {
-						if (interentVersionCode != 0) {
-							if (interentVersionCode > versionCode) {// 需要更新
-								showUpdateDialog("App已有最新版本!是否进行更新?");
-								mainActivity.setLoadIsVisible(View.GONE);
-								mainActivity.setIsInterrupt(false);
-							} else {// 不需要更新
-								mainActivity.setLoadIsVisible(View.GONE);
-								mainActivity.setIsInterrupt(false);
-								ToastUtil.showToast(mainActivity, "APK已是最新版本!");
-							}
-						} else {
-							mainActivity.setLoadIsVisible(View.GONE);
-							mainActivity.setIsInterrupt(false);
-							ToastUtil.showToast(mainActivity, "APK更新服务器正忙!");
-						}
-					}
-				});
-			}
-		});
-		// 自动更新功能======================================================================
-		return view;
-	}
+                versionCode = ViewsUitls.getVersionCode(mainActivity);
+                ViewsUitls.runInMainThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (interentVersionCode != 0) {
+                            if (interentVersionCode > versionCode) {// 需要更新
+                                showUpdateDialog("App已有最新版本!是否进行更新?");
+                                mainActivity.setLoadIsVisible(View.GONE);
+                                mainActivity.setIsInterrupt(false);
+                            } else {// 不需要更新
+                                mainActivity.setLoadIsVisible(View.GONE);
+                                mainActivity.setIsInterrupt(false);
+                                ToastUtil.showToast(mainActivity, "APK已是最新版本!");
+                            }
+                        } else {
+                            mainActivity.setLoadIsVisible(View.GONE);
+                            mainActivity.setIsInterrupt(false);
+                            ToastUtil.showToast(mainActivity, "APK更新服务器正忙!");
+                        }
+                    }
+                });
+            }
+        });
+        // 自动更新功能======================================================================
+        return view;
+    }
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position,
-			long id) {
-		switch (position) {
-		case 0:
-			startWaterRainWorkManger("水情雨情", position);
-			break;
-		case 1:
-			startWaterRainWorkManger("实时监测", position);
-			break;
-		case 2:
-			startWaterRainWorkManger("视频监控", position);
-			break;
-		case 3:
-			startWaterRainWorkManger("运行工况", position);
-			break;
-		case 4:
-			startWaterRainWorkManger("所长执行", position);
-			break;
-		case 5:
-			startWaterRainWorkManger("现场运行", position);
-			break;
-		case 6:
-			startWaterRainWorkManger("巡视检查", position);
-			break;
-		}
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+                            long id) {
+        switch (position) {
+            case 0:
+                startWaterRainWorkManger("水情雨情", position);
+                break;
+            case 1:
+                startWaterRainWorkManger("实时监测", position);
+                break;
+            case 2:
+                startWaterRainWorkManger("视频监控", position);
+                break;
+            case 3:
+                startWaterRainWorkManger("运行工况", position);
+                break;
+            case 4:
+                startWaterRainWorkManger("所长执行", position);
+                break;
+            case 5:
+                startWaterRainWorkManger("现场运行", position);
+                break;
+            case 6:
+                startWaterRainWorkManger("巡视检查", position);
+                break;
+        }
+    }
 
-	}
+    private void startWaterRainWorkManger(String title, int position) {
+        Intent intent = new Intent(ViewsUitls.getContext(),
+                WaterRainWorkManger.class);
+        intent.putExtra(IntentFields.ACTIVITY_TITLE, title);
+        intent.putExtra("qufen", position);
+        getActivity().startActivity(intent);
+    }
 
-	private void startWaterRainWorkManger(String title, int position) {
-		Intent intent = new Intent(ViewsUitls.getContext(),
-				WaterRainWorkManger.class);
-		intent.putExtra(IntentFields.ACTIVITY_TITLE, title);
-		intent.putExtra("qufen", position);
-		getActivity().startActivity(intent);
-	}
+    // ======================================================================以下都是自动更新功能======================================================================
+    protected void requestVersionCode() {
+        HttpBasic httpBasic = new HttpBasic();
+        List<BasicNameValuePair> list = new ArrayList<BasicNameValuePair>();
+        try {
+            String address = SharedPreferencesUtil.getString(
+                    ViewsUitls.getContext(), "address", "");
+            // result直接是数字
+            String result = httpBasic.postBack(address
+                    + ApiField.INTERENTVERSIONCODE, list);
+            System.out.println(address + ApiField.INTERENTVERSIONCODE);
+            System.out.println("result: " + result);
+            if (StringUtils.interentIsNormal(result)) {
+                interentVersionCode = Integer.parseInt(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	// ======================================================================以下都是自动更新功能======================================================================
-	protected void requestVersionCode() {
-		HttpBasic httpBasic = new HttpBasic();
-		List<BasicNameValuePair> list = new ArrayList<BasicNameValuePair>();
-		try {
-			String address = SharedPreferencesUtil.getString(
-					ViewsUitls.getContext(), "address", "");
-			// result直接是数字
-			String result = httpBasic.postBack(address
-					+ ApiField.INTERENTVERSIONCODE, list);
-			System.out.println(address + ApiField.INTERENTVERSIONCODE);
-			System.out.println("result: " + result);
-			if (StringUtils.interentIsNormal(result)) {
-				interentVersionCode = Integer.parseInt(result);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    private void showUpdateDialog(String content) {
+        alertDialog = new AlertDialog.Builder(mainActivity).create();
+        alertDialog.setView(new EditText(ViewsUitls.getContext()));
+        // alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
+        LayoutParams attributes = alertDialog.getWindow().getAttributes();// 获取对话框的属性集
+        WindowManager m = mainActivity.getWindowManager();
+        Display d = m.getDefaultDisplay(); // 为获取屏幕宽、高
+        attributes.width = (int) (d.getWidth() * 0.9);
+        alertDialog.show();
+        // 设置对话框中自定义内容
+        Window window = alertDialog.getWindow();
+        window.setContentView(R.layout.dialog_update);
+        TextView textContents = (TextView) window
+                .findViewById(R.id.tv_update_contents);
+        textContents.setText(content);
+        Button mCancel = (Button) window.findViewById(R.id.bt_update_cancel);
+        Button mSure = (Button) window.findViewById(R.id.bt_update_make_sure);
+        mCancel.setOnClickListener(this);
+        mSure.setOnClickListener(this);
+    }
 
-	private void showUpdateDialog(String content) {
-		alertDialog = new AlertDialog.Builder(mainActivity).create();
-		alertDialog.setView(new EditText(ViewsUitls.getContext()));
-		// alertDialog.setCanceledOnTouchOutside(false);
-		alertDialog.setCancelable(false);
-		LayoutParams attributes = alertDialog.getWindow().getAttributes();// 获取对话框的属性集
-		WindowManager m = mainActivity.getWindowManager();
-		Display d = m.getDefaultDisplay(); // 为获取屏幕宽、高
-		attributes.width = (int) (d.getWidth() * 0.9);
-		alertDialog.show();
-		// 设置对话框中自定义内容
-		Window window = alertDialog.getWindow();
-		window.setContentView(R.layout.dialog_update);
-		TextView textContents = (TextView) window
-				.findViewById(R.id.tv_update_contents);
-		textContents.setText(content);
-		Button mCancel = (Button) window.findViewById(R.id.bt_update_cancel);
-		Button mSure = (Button) window.findViewById(R.id.bt_update_make_sure);
-		mCancel.setOnClickListener(this);
-		mSure.setOnClickListener(this);
+    private void showDownloadDialog(String content) {
+        downloadDialog = new AlertDialog.Builder(mainActivity).create();
+        downloadDialog.setView(new EditText(ViewsUitls.getContext()));
+        // alertDialog.setCanceledOnTouchOutside(false);
+        downloadDialog.setCancelable(false);
+        LayoutParams attributes = downloadDialog.getWindow().getAttributes();// 获取对话框的属性集
+        WindowManager m = mainActivity.getWindowManager();
+        Display d = m.getDefaultDisplay(); // 为获取屏幕宽、高
+        attributes.width = (int) (d.getWidth() * 0.9);
+        downloadDialog.show();
+        // 设置对话框中自定义内容
+        Window window = downloadDialog.getWindow();
+        window.setContentView(R.layout.dialog_download);
+        TextView textContents = (TextView) window
+                .findViewById(R.id.tv_update_contents);
+        textContents.setText(content);
 
-	}
+        againDownLoad = (TextView) window.findViewById(R.id.iv_again_download);
+        againDownLoad.setOnClickListener(this);
+        ImageView closeDownLoad = (ImageView) window
+                .findViewById(R.id.iv_download_close);
+        closeDownLoad.setOnClickListener(this);
+        numberProgressBar = (NumberProgressBar) window
+                .findViewById(R.id.npb_update_numberbar);
 
-	private void showDownloadDialog(String content) {
-		downloadDialog = new AlertDialog.Builder(mainActivity).create();
-		downloadDialog.setView(new EditText(ViewsUitls.getContext()));
-		// alertDialog.setCanceledOnTouchOutside(false);
-		downloadDialog.setCancelable(false);
-		LayoutParams attributes = downloadDialog.getWindow().getAttributes();// 获取对话框的属性集
-		WindowManager m = mainActivity.getWindowManager();
-		Display d = m.getDefaultDisplay(); // 为获取屏幕宽、高
-		attributes.width = (int) (d.getWidth() * 0.9);
-		downloadDialog.show();
-		// 设置对话框中自定义内容
-		Window window = downloadDialog.getWindow();
-		window.setContentView(R.layout.dialog_download);
-		TextView textContents = (TextView) window
-				.findViewById(R.id.tv_update_contents);
-		textContents.setText(content);
+        // 创建下载文件存储所在地
+        File file = new File(Environment.getExternalStorageDirectory()
+                .getPath(), "/Cufc/apk");
+        file.mkdirs();
 
-		againDownLoad = (TextView) window.findViewById(R.id.iv_again_download);
-		againDownLoad.setOnClickListener(this);
-		ImageView closeDownLoad = (ImageView) window
-				.findViewById(R.id.iv_download_close);
-		closeDownLoad.setOnClickListener(this);
-		numberProgressBar = (NumberProgressBar) window
-				.findViewById(R.id.npb_update_numberbar);
+        // TODO 下载具体url
+        downLoadRunnable = new AllotDownLoadRunnable(
+                "http://223.112.181.214:7001/slfx/upload/soft/slfx.apk",
+                "slfx.apk", file.getPath(), startDownLoadThread);
+        ThreadManager.getInstance().execute(downLoadRunnable);
+    }
 
-		// 创建下载文件存储所在地
-		File file = new File(Environment.getExternalStorageDirectory()
-				.getPath(), "/Cufc/apk");
-		file.mkdirs();
+    @Override
+    public void onClick(View v) {
+        // TODO onClick
+        switch (v.getId()) {
+            case R.id.bt_update_cancel:
+                mainActivity.finish();
+                break;
+            case R.id.bt_update_make_sure:
+                alertDialog.cancel();
+                showDownloadDialog("正在下载最新版App!");
+                break;
+            case R.id.iv_again_download:
+                numberProgressBar.setVisibility(View.VISIBLE);
+                againDownLoad.setVisibility(View.GONE);
+                ThreadManager.getInstance().cancel(downLoadRunnable);
+                ThreadManager.getInstance().cancel(downLoadThread);
+                ThreadManager.getInstance().execute(downLoadRunnable);
+                break;
+            case R.id.iv_download_close:
+                // 完全关闭本包下的所有进程服务等
+                // ActivityManager am = (ActivityManager)
+                // getSystemService(Context.ACTIVITY_SERVICE);
+                // am.killBackgroundProcesses(getPackageName());
+                android.os.Process.killProcess(android.os.Process.myPid()); // 获取PID，目前获取自己的也只有该API，否则从/proc中自己的枚举其他进程吧，不过要说明的是，结束其他进程不一定有权限，不然就乱套了。
+                System.exit(0); // 常规java、c#的标准退出法，返回值为0代表正常退出
+                break;
+            default:
+                break;
+        }
+    }
 
-		// TODO 下载具体url
-		downLoadRunnable = new AllotDownLoadRunnable(
-				"http://223.112.181.214:7001/slfx/upload/soft/slfx.apk",
-				"slfx.apk", file.getPath(), startDownLoadThread);
-		ThreadManager.getInstance().execute(downLoadRunnable);
+    private void showAgainDown() {
+        numberProgressBar.setVisibility(View.INVISIBLE);
+        againDownLoad.setVisibility(View.VISIBLE);
+    }
 
-	}
+    private StartDownLoadThread startDownLoadThread = new StartDownLoadThread() {
+        @Override
+        public void linkFail() {
+            ViewsUitls.runInMainThread(new Runnable() {
+                @Override
+                public void run() {
+                    ToastUtil.showToast(ViewsUitls.getContext(), "请求下载网络链接失败");
+                    showAgainDown();
+                }
+            });
+        }
 
-	@Override
-	public void onClick(View v) {
+        @Override
+        public void startDownLoadThread(int startIndex, int endIndex,
+                                        String urlPath, String fileName) {
+            System.out.println("线程id:" + "理论的位置:" + startIndex + "----"
+                    + endIndex + " urlPath: " + urlPath + " fileName: "
+                    + fileName);
 
-		// TODO onClick
-		switch (v.getId()) {
-		case R.id.bt_update_cancel:
-			mainActivity.finish();
-			break;
-		case R.id.bt_update_make_sure:
-			alertDialog.cancel();
-			showDownloadDialog("正在下载最新版App!");
-			break;
-		case R.id.iv_again_download:
-			numberProgressBar.setVisibility(View.VISIBLE);
-			againDownLoad.setVisibility(View.GONE);
-			ThreadManager.getInstance().cancel(downLoadRunnable);
-			ThreadManager.getInstance().cancel(downLoadThread);
-			ThreadManager.getInstance().execute(downLoadRunnable);
-			break;
-		case R.id.iv_download_close:
-			// 完全关闭本包下的所有进程服务等
-			// ActivityManager am = (ActivityManager)
-			// getSystemService(Context.ACTIVITY_SERVICE);
-			// am.killBackgroundProcesses(getPackageName());
-			android.os.Process.killProcess(android.os.Process.myPid()); // 获取PID，目前获取自己的也只有该API，否则从/proc中自己的枚举其他进程吧，不过要说明的是，结束其他进程不一定有权限，不然就乱套了。
-			System.exit(0); // 常规java、c#的标准退出法，返回值为0代表正常退出
-			break;
-		default:
-			break;
-		}
+            // 开启正式下载文件的Runnable
+            downLoadThread = new DownLoadThread(startIndex, endIndex, urlPath,
+                    fileName, 1, downLoadResult);
+            ThreadManager.getInstance().execute(downLoadThread);
+            FragmentHomePage.this.fileName = fileName;
+        }
+    };
 
-	}
+    private DownLoadResult downLoadResult = new DownLoadResult() {
 
-	private void showAgainDown() {
-		numberProgressBar.setVisibility(View.INVISIBLE);
-		againDownLoad.setVisibility(View.VISIBLE);
-	}
+        @Override
+        public void linkFail() {
+            ViewsUitls.runInMainThread(new Runnable() {
+                @Override
+                public void run() {
+                    ToastUtil.showToast(ViewsUitls.getContext(), "正式下载网络链接失败");
+                    showAgainDown();
+                }
+            });
+        }
 
-	private StartDownLoadThread startDownLoadThread = new StartDownLoadThread() {
-		@Override
-		public void linkFail() {
-			ViewsUitls.runInMainThread(new Runnable() {
-				@Override
-				public void run() {
-					ToastUtil.showToast(ViewsUitls.getContext(), "请求下载网络链接失败");
-					showAgainDown();
-				}
-			});
-		}
+        @Override
+        public void updateCurrent(final int pbCurrent) {
+            System.out.println(pbCurrent);
+            ViewsUitls.runInMainThread(new Runnable() {
+                @Override
+                public void run() {
+                    numberProgressBar.setProgress(pbCurrent);
+                }
+            });
+        }
 
-		@Override
-		public void startDownLoadThread(int startIndex, int endIndex,
-				String urlPath, String fileName) {
-			System.out.println("线程id:" + "理论的位置:" + startIndex + "----"
-					+ endIndex + " urlPath: " + urlPath + " fileName: "
-					+ fileName);
+        @Override
+        public void downLoadFinish(final String filePathName) {
+            ViewsUitls.runInMainThread(new Runnable() {
+                @Override
+                public void run() {
+                    File file = new File(fileName + 0 + ".txt");
+                    file.delete();
+                    ToastUtil.showToast(ViewsUitls.getContext(), "下载完成");
 
-			// 开启正式下载文件的Runnable
-			downLoadThread = new DownLoadThread(startIndex, endIndex, urlPath,
-					fileName, 1, downLoadResult);
-			ThreadManager.getInstance().execute(downLoadThread);
-			FragmentHomePage.this.fileName = fileName;
+                    System.out.println(filePathName);
+                    downloadDialog.cancel();
 
-		}
-	};
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(Uri.fromFile(new File(filePathName)),
+                            "application/vnd.android.package-archive");
+                    startActivity(intent);
+                    mainActivity.finish();
+                }
+            });
+        }
+    };
 
-	private DownLoadResult downLoadResult = new DownLoadResult() {
+    private void start() {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                BufferedReader bufferedReader = null;
+                try {
+                    bufferedReader = new BufferedReader(new InputStreamReader(getContext().getAssets().open("text1.txt")));
+                    String readLine;
+                    while ((readLine = bufferedReader.readLine()) != null) {
+                        System.out.println(readLine);
+                        System.out.println("Instant Run Runtime started. Android package is baidumapsdk.demo, real application class is baidumapsdk.demo.");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        assert bufferedReader != null;
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
+    }
 
-		@Override
-		public void linkFail() {
-			ViewsUitls.runInMainThread(new Runnable() {
-				@Override
-				public void run() {
-					ToastUtil.showToast(ViewsUitls.getContext(), "正式下载网络链接失败");
-					showAgainDown();
-				}
-			});
-		}
-
-		@Override
-		public void updateCurrent(final int pbCurrent) {
-			System.out.println(pbCurrent);
-			ViewsUitls.runInMainThread(new Runnable() {
-				@Override
-				public void run() {
-					numberProgressBar.setProgress(pbCurrent);
-				}
-			});
-		}
-
-		@Override
-		public void downLoadFinish(final String filePathName) {
-			ViewsUitls.runInMainThread(new Runnable() {
-				@Override
-				public void run() {
-					File file = new File(fileName + 0 + ".txt");
-					file.delete();
-					ToastUtil.showToast(ViewsUitls.getContext(), "下载完成");
-
-					System.out.println(filePathName);
-					downloadDialog.cancel();
-
-					Intent intent = new Intent(Intent.ACTION_VIEW);
-					intent.setDataAndType(Uri.fromFile(new File(filePathName)),
-							"application/vnd.android.package-archive");
-					startActivity(intent);
-					mainActivity.finish();
-				}
-			});
-		}
-
-	};
 
 }
